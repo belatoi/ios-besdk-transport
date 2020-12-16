@@ -1,0 +1,108 @@
+PODS:
+  - AFDateHelper (4.3.0)
+  - Alamofire (4.9.1)
+  - AMPopTip (4.5.0)
+  - BESDK (1.0.0):
+    - AFDateHelper
+    - Alamofire
+    - AMPopTip
+    - CryptoSwift
+    - GoogleMaps
+    - Haptica
+    - NKModalViewManager
+    - NVActivityIndicatorView/AppExtension (~> 4.8.0)
+    - SDWebImage
+    - SwiftDate
+    - SwiftEntryKit
+    - SwiftGen
+    - SwiftIcons_
+    - SwiftLocation (~> 3.2)
+    - SwiftRichString
+    - SwiftyAttributes
+    - SwiftyJSON
+    - SwiftySound
+  - CryptoSwift (1.3.8)
+  - GoogleMaps (4.1.0):
+    - GoogleMaps/Maps (= 4.1.0)
+  - GoogleMaps/Base (4.1.0)
+  - GoogleMaps/Maps (4.1.0):
+    - GoogleMaps/Base
+  - Haptica (3.0.2)
+  - NKModalViewManager (3.5.3)
+  - NVActivityIndicatorView/AppExtension (4.8.0)
+  - QuickLayout (3.0.0)
+  - SDWebImage (5.10.0):
+    - SDWebImage/Core (= 5.10.0)
+  - SDWebImage/Core (5.10.0)
+  - SwiftDate (6.3.1)
+  - SwiftEntryKit (1.2.6):
+    - QuickLayout (= 3.0.0)
+  - SwiftGen (6.4.0)
+  - SwiftIcons_ (2.4.3)
+  - SwiftLocation (3.2.3):
+    - SwiftyJSON (~> 4.0.0-alpha.1)
+  - SwiftRichString (3.7.2)
+  - SwiftyAttributes (5.1.1)
+  - SwiftyJSON (4.0.0)
+  - SwiftySound (1.2.0)
+
+DEPENDENCIES:
+  - BESDK (from `https://github.com/belatoi/besdk-transport.git`, tag `v1.0.0`)
+
+SPEC REPOS:
+  trunk:
+    - AFDateHelper
+    - Alamofire
+    - AMPopTip
+    - CryptoSwift
+    - GoogleMaps
+    - Haptica
+    - NKModalViewManager
+    - NVActivityIndicatorView
+    - QuickLayout
+    - SDWebImage
+    - SwiftDate
+    - SwiftEntryKit
+    - SwiftGen
+    - SwiftIcons_
+    - SwiftLocation
+    - SwiftRichString
+    - SwiftyAttributes
+    - SwiftyJSON
+    - SwiftySound
+
+EXTERNAL SOURCES:
+  BESDK:
+    :git: https://github.com/belatoi/besdk-transport.git
+    :tag: v1.0.0
+
+CHECKOUT OPTIONS:
+  BESDK:
+    :git: https://github.com/belatoi/besdk-transport.git
+    :tag: v1.0.0
+
+SPEC CHECKSUMS:
+  AFDateHelper: b769c07d3d4784ee9a74633285304261bb27dc52
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AMPopTip: e0ed2967892b18d1e55505c015fa06e535003fdc
+  BESDK: 2701914263e7f7d3ff30127085880c4714da1ea9
+  CryptoSwift: 01b0f0cba1d5c212e5a335ff6c054fb75a204f00
+  GoogleMaps: 008e2c80e38605b56b560e8deb73d4194ff30bef
+  Haptica: dc206651beeca25ab4744c633fbf0ae4d1e86baf
+  NKModalViewManager: aa52c0abdc2633b1ed3464baeb65dabfa9785dc3
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
+  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
+  SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
+  SwiftEntryKit: 96a2fa90b2631bbbfac50d18449e9ca3d0635f13
+  SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
+  SwiftIcons_: 2711d023e806474eb9dada3d956cb0b0b285dbb8
+  SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
+  SwiftRichString: d61b807db1f8834c26fee92b6dd3e1be2dc5af03
+  SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  SwiftySound: 9eb28bb14edb601b40027e44319e0ef8383f88bf
+
+PODFILE CHECKSUM: d59e60d93fb50aff3074b84ffd6083dbbd705861
+
+COCOAPODS: 1.10.0
