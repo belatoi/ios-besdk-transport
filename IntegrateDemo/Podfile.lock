@@ -47,7 +47,7 @@ PODS:
   - SwiftySound (1.2.0)
 
 DEPENDENCIES:
-  - BESDK (from `https://github.com/belatoi/besdk-transport.git`, tag `v1.0.0`)
+  - BESDK (from `../`)
 
 SPEC REPOS:
   trunk:
@@ -73,13 +73,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   BESDK:
-    :git: https://github.com/belatoi/besdk-transport.git
-    :tag: v1.0.0
-
-CHECKOUT OPTIONS:
-  BESDK:
-    :git: https://github.com/belatoi/besdk-transport.git
-    :tag: v1.0.0
+    :path: "../"
 
 SPEC CHECKSUMS:
   AFDateHelper: b769c07d3d4784ee9a74633285304261bb27dc52
@@ -103,6 +97,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftySound: 9eb28bb14edb601b40027e44319e0ef8383f88bf
 
-PODFILE CHECKSUM: d59e60d93fb50aff3074b84ffd6083dbbd705861
+PODFILE CHECKSUM: 3d48f26baca2df83ef0b8cac8264d15911a1df01
 
 COCOAPODS: 1.10.0
