@@ -1,0 +1,59 @@
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+// DO NOT modify this file directly
+
+{% if catalogs %}
+{% set enumName %}{{param.enumName|default:"Asset"}}{% endset %}
+{% set colorType %}{{param.colorTypeName|default:"ColorAsset"}}{% endset %}
+{% set dataType %}{{param.dataTypeName|default:"DataAsset"}}{% endset %}
+{% set imageType %}{{param.imageTypeName|default:"ImageAsset"}}{% endset %}
+{% set colorAlias %}{{param.colorAliasName|default:"AssetColorTypeAlias"}}{% endset %}
+{% set imageAlias %}{{param.imageAliasName|default:"AssetImageTypeAlias"}}{% endset %}
+{% set forceNamespaces %}{{param.forceProvidesNamespaces|default:"false"}}{% endset %}
+{% set accessModifier %}{% if param.publicAccess %}public{% else %}internal{% endif %}{% endset %}
+import UIKit.UIImage
+
+{# ----- A struct that contains all assets ----- #}
+{{accessModifier}} struct {{enumName}} {
+{# ----- Loop through each asset and generate corresponding property ----- #}
+{% macro generateAssets assets %}{% for asset in assets %}
+    {% if asset.type == "image" %}
+    {{accessModifier}} static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = {{imageType}}(name: "{{asset.value}}")
+    {% elif asset.type == "group" and asset.items %}
+    {% call generateAssets asset.items %}
+    {% elif asset.items %}
+    {% call generateAssets asset.items %}
+    {% endif %}
+{% endfor %}{% endmacro %}
+{# ----- Loop through all catalogs and generate corresponding assets inside each one ----- #}
+{% if catalogs.count > 1 %}
+{% for catalog in catalogs %}
+{{accessModifier}} enum {{catalog.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+{% filter indent:2 %}{% call generateAssets catalog.assets %}{% endfilter %}
+}
+{% endfor %}
+{% else %}
+{% call generateAssets catalogs.first.assets %}
+{% endif %}
+
+    static func getImage(named: String) -> UIImage? {
+        return {{imageType}}(name: named).image
+    }
+}
+
+{{accessModifier}} struct {{imageType}} {
+    {{accessModifier}} let name: String
+
+    {{accessModifier}} var image: UIImage? {
+        guard let image = UIImage(named: name, in: Bundle.myBundle, compatibleWith: nil) else {
+            DLog("Unable to load image named \(name).")
+            return nil
+        }
+
+        return image
+    }
+}
+
+private final class BundleToken {}
+{% else %}
+// No assets found
+{% endif %}

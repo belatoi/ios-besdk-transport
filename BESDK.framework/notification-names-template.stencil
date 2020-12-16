@@ -1,0 +1,102 @@
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+// DO NOT modify this file directly
+
+/*
+The JSON will have the structure like below
+
+{
+  "GROUP_NAME_1": [
+    "NOTIFICATION_NAME_1",
+    "NOTIFICATION_NAME_2",
+    "NOTIFICATION_NAME_3"
+  ],
+  "GROUP_NAME_2": [
+    {
+      "name": "NOTIFICATION_NAME_4",
+      "description": "The description of NOTIFICATION_NAME_4"
+    },
+    {
+      "name": "NOTIFICATION_NAME_5",
+      "description": "The description of NOTIFICATION_NAME_5"
+    }
+  ]
+}
+
+The JSON above will be generetad like the following
+
+extension Notification.Name {
+  /* GROUP_NAME_1 */
+  static let NOTIFICATION_NAME_1 = Notification.Name(rawValue: "NOTIFICATION_NAME_1")
+  static let NOTIFICATION_NAME_2 = Notification.Name(rawValue: "NOTIFICATION_NAME_2")
+  static let NOTIFICATION_NAME_3 = Notification.Name(rawValue: "NOTIFICATION_NAME_3")
+
+  /* GROUP_NAME_2 */
+  /// The description of NOTIFICATION_NAME_4
+  static let NOTIFICATION_NAME_4 = Notification.Name(rawValue: "NOTIFICATION_NAME_4")
+  /// The description of NOTIFICATION_NAME_5
+  static let NOTIFICATION_NAME_5 = Notification.Name(rawValue: "NOTIFICATION_NAME_5")
+
+}
+*/
+
+{% if files %}
+{% set accessModifier %}{% if param.publicAccess %}public{% else %}internal{% endif %}{% endset %}
+{% set documentPrefix %}{{param.documentName|default:"Document"}}{% endset %}
+import Foundation
+{# -----  ----- #}
+{% macro fileBlock file %}
+  {% if file.documents.count > 1 %}
+  {% for document in file.documents %}
+  {% set documentName %}{{documentPrefix}}{{forloop.counter}}{% endset %}
+  {{accessModifier}} enum {{documentName|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+    {% filter indent:2 %}{% call documentBlock file document %}{% endfilter %}
+  }
+  {% endfor %}
+  {% else %}
+  {% call documentBlock file file.documents.first %}
+  {% endif %}
+{% endmacro %}
+{# -----  ----- #}
+{% macro documentBlock file document %}
+  {% if document.metadata.type == "Dictionary" %}
+  {% for key,value in document.metadata.properties %}
+  {# {{accessModifier}} {% call propertyBlock key value document.data %} #}
+    /* {{ key||swiftIdentifier:"pretty"|upperFirstLetter|escapeReservedKeywords }} */
+  {% call generateNotificationNames document.data[key] value %}
+  {% endfor %}
+  {% endif %}
+{% endmacro %}
+{# ----- List enum cases ----- #}
+{% macro generateNotificationNames value metadata %}
+  {% if metadata.type == "Array" %}
+    {% if metadata.element.type == "String" %}
+    {% for eventName in value %}
+    static let {{ eventName }} = Notification.Name(rawValue: "{{ eventName }}")
+    {% if forloop.last %}
+
+    {% endif %}
+    {% endfor %}
+    {% elif metadata.element.type == "Dictionary" %}
+    {% for event in value %}
+    /// {{ event.description }}
+    static let {{ event.name }} = Notification.Name(rawValue: "{{ event.name }}")
+    {% if forloop.last %}
+
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+{{accessModifier}} extension Notification.Name {
+  {% if files.count > 1 %}
+  {% for file in files %}
+    {% call fileBlock file %}
+  {% endfor %}
+  {% else %}
+  {% call fileBlock files.first %}
+  {% endif %}
+}
+{% else %}
+// No files found
+{% endif %}

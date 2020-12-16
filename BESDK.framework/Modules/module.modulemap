@@ -1,0 +1,11 @@
+framework module BESDK {
+  umbrella header "BESDK.h"
+
+  export *
+  module * { export * }
+}
+
+module BESDK.Swift {
+    header "BESDK-Swift.h"
+    requires objc
+}
