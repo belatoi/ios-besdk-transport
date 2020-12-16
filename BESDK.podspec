@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   spec.author           = { "duongpham" => "duong.pham@be.com.vn" }
   spec.platform         = :ios, "9.0"
   spec.swift_version    = "5.0" 
-  spec.source           = { :git => "https://github.com/belatoi/besdk-transport.git"}, :tag => "v#{spec.version}" }
+  spec.source           = { :git => "https://github.com/belatoi/besdk-transport.git", :tag => "v#{spec.version}" }
 
   spec.source_files   = "BESDK.framework/Headers/*.{swift,h,m}"
   spec.public_header_files = "BESDK.framework/Headers/*.h"
