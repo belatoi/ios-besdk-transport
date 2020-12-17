@@ -192,7 +192,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import CoreGraphics;
 @import Foundation;
-@import NKModalViewManager;
 @import UIKit;
 @import WebKit;
 #endif
@@ -214,42 +213,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-@class UIColor;
-@class UIFont;
 @class NSCoder;
-
-IB_DESIGNABLE
-SWIFT_CLASS("_TtC5BESDK14CBPinEntryView")
-@interface CBPinEntryView : UIView
-@property (nonatomic) IBInspectable NSInteger length;
-@property (nonatomic) IBInspectable CGFloat spacing;
-@property (nonatomic) IBInspectable CGFloat entryCornerRadius;
-@property (nonatomic) IBInspectable CGFloat entryBorderWidth;
-@property (nonatomic, strong) IBInspectable UIColor * _Nonnull entryDefaultBorderColour;
-@property (nonatomic, strong) IBInspectable UIColor * _Nonnull entryBorderColour;
-@property (nonatomic, strong) IBInspectable UIColor * _Nonnull entryEditingBackgroundColour;
-@property (nonatomic, strong) IBInspectable UIColor * _Nonnull entryErrorBorderColour;
-@property (nonatomic, strong) IBInspectable UIColor * _Nonnull entryBackgroundColour;
-@property (nonatomic, strong) IBInspectable UIColor * _Nonnull entryTextColour;
-@property (nonatomic, strong) IBInspectable UIFont * _Nonnull entryFont;
-@property (nonatomic) IBInspectable BOOL isSecure;
-@property (nonatomic, copy) IBInspectable NSString * _Nonnull secureCharacter;
-@property (nonatomic) IBInspectable NSInteger keyboardType;
-@property (nonatomic) IBInspectable BOOL isUnderlined;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)awakeFromNib;
-- (void)prepareForInterfaceBuilder;
-- (BOOL)becomeFirstResponder;
-- (BOOL)resignFirstResponder;
-@end
-
-@class UITextField;
-
-@interface CBPinEntryView (SWIFT_EXTENSION(BESDK)) <UITextFieldDelegate>
-- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
-@end
-
 
 /// A single frameLayout handles size and position of a view
 SWIFT_CLASS("_TtC5BESDK11FrameLayout")
@@ -387,52 +351,6 @@ SWIFT_CLASS("_TtC5BESDK8NKButton")
 
 
 
-SWIFT_CLASS("_TtC5BESDK11NKImageView")
-@interface NKImageView : UIImageView
-- (CGSize)sizeThatFits:(CGSize)size SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image highlightedImage:(UIImage * _Nullable)highlightedImage OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class NSBundle;
-
-SWIFT_CLASS("_TtC5BESDK21NKImageViewController")
-@interface NKImageViewController : UIViewController
-- (void)viewDidLoad;
-- (void)viewDidLayoutSubviews;
-- (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^ _Nullable)(void))completion;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class NKModalViewController;
-
-@interface NKImageViewController (SWIFT_EXTENSION(BESDK)) <NKModalViewControllerProtocol>
-- (void)startDraggingFromModalViewController:(NKModalViewController * _Null_unspecified)modalViewController;
-- (void)didCancelDraggingFromModalViewController:(NKModalViewController * _Null_unspecified)modalViewController;
-@end
-
-
-SWIFT_CLASS("_TtC5BESDK13NKImageViewer")
-@interface NKImageViewer : UIScrollView
-@property (nonatomic) CGRect frame;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)didAddSubview:(UIView * _Nonnull)subview;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-@end
-
-
-@interface NKImageViewer (SWIFT_EXTENSION(BESDK)) <UIScrollViewDelegate>
-- (UIView * _Nullable)viewForZoomingInScrollView:(UIScrollView * _Nonnull)scrollView SWIFT_WARN_UNUSED_RESULT;
-- (void)scrollViewWillBeginZooming:(UIScrollView * _Nonnull)scrollView withView:(UIView * _Nullable)view;
-- (void)scrollViewDidEndZooming:(UIScrollView * _Nonnull)scrollView withView:(UIView * _Nullable)view atScale:(CGFloat)scale;
-@end
-
-
 SWIFT_CLASS("_TtC5BESDK11NKTextField")
 @interface NKTextField : UITextField
 @property (nonatomic, getter=isSecureTextEntry) BOOL secureTextEntry;
@@ -461,6 +379,7 @@ SWIFT_CLASS("_TtC5BESDK11NKTextField")
 
 
 @protocol UIViewControllerTransitionCoordinator;
+@class NSBundle;
 
 SWIFT_CLASS("_TtC5BESDK16PullUpController")
 @interface PullUpController : UIViewController
@@ -494,16 +413,6 @@ SWIFT_CLASS("_TtC5BESDK11StackLayout")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
-
-SWIFT_CLASS("_TtC5BESDK20TableLabelHeaderView")
-@interface TableLabelHeaderView : UITableViewHeaderFooterView
-- (nonnull instancetype)initWithReuseIdentifier:(NSString * _Nullable)reuseIdentifier SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)layoutSubviews;
-- (CGSize)sizeThatFits:(CGSize)size SWIFT_WARN_UNUSED_RESULT;
-@end
-
 
 
 
@@ -747,7 +656,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 @import CoreGraphics;
 @import Foundation;
-@import NKModalViewManager;
 @import UIKit;
 @import WebKit;
 #endif
@@ -769,42 +677,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-@class UIColor;
-@class UIFont;
 @class NSCoder;
-
-IB_DESIGNABLE
-SWIFT_CLASS("_TtC5BESDK14CBPinEntryView")
-@interface CBPinEntryView : UIView
-@property (nonatomic) IBInspectable NSInteger length;
-@property (nonatomic) IBInspectable CGFloat spacing;
-@property (nonatomic) IBInspectable CGFloat entryCornerRadius;
-@property (nonatomic) IBInspectable CGFloat entryBorderWidth;
-@property (nonatomic, strong) IBInspectable UIColor * _Nonnull entryDefaultBorderColour;
-@property (nonatomic, strong) IBInspectable UIColor * _Nonnull entryBorderColour;
-@property (nonatomic, strong) IBInspectable UIColor * _Nonnull entryEditingBackgroundColour;
-@property (nonatomic, strong) IBInspectable UIColor * _Nonnull entryErrorBorderColour;
-@property (nonatomic, strong) IBInspectable UIColor * _Nonnull entryBackgroundColour;
-@property (nonatomic, strong) IBInspectable UIColor * _Nonnull entryTextColour;
-@property (nonatomic, strong) IBInspectable UIFont * _Nonnull entryFont;
-@property (nonatomic) IBInspectable BOOL isSecure;
-@property (nonatomic, copy) IBInspectable NSString * _Nonnull secureCharacter;
-@property (nonatomic) IBInspectable NSInteger keyboardType;
-@property (nonatomic) IBInspectable BOOL isUnderlined;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)awakeFromNib;
-- (void)prepareForInterfaceBuilder;
-- (BOOL)becomeFirstResponder;
-- (BOOL)resignFirstResponder;
-@end
-
-@class UITextField;
-
-@interface CBPinEntryView (SWIFT_EXTENSION(BESDK)) <UITextFieldDelegate>
-- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
-@end
-
 
 /// A single frameLayout handles size and position of a view
 SWIFT_CLASS("_TtC5BESDK11FrameLayout")
@@ -942,52 +815,6 @@ SWIFT_CLASS("_TtC5BESDK8NKButton")
 
 
 
-SWIFT_CLASS("_TtC5BESDK11NKImageView")
-@interface NKImageView : UIImageView
-- (CGSize)sizeThatFits:(CGSize)size SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image highlightedImage:(UIImage * _Nullable)highlightedImage OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class NSBundle;
-
-SWIFT_CLASS("_TtC5BESDK21NKImageViewController")
-@interface NKImageViewController : UIViewController
-- (void)viewDidLoad;
-- (void)viewDidLayoutSubviews;
-- (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^ _Nullable)(void))completion;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class NKModalViewController;
-
-@interface NKImageViewController (SWIFT_EXTENSION(BESDK)) <NKModalViewControllerProtocol>
-- (void)startDraggingFromModalViewController:(NKModalViewController * _Null_unspecified)modalViewController;
-- (void)didCancelDraggingFromModalViewController:(NKModalViewController * _Null_unspecified)modalViewController;
-@end
-
-
-SWIFT_CLASS("_TtC5BESDK13NKImageViewer")
-@interface NKImageViewer : UIScrollView
-@property (nonatomic) CGRect frame;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)didAddSubview:(UIView * _Nonnull)subview;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-@end
-
-
-@interface NKImageViewer (SWIFT_EXTENSION(BESDK)) <UIScrollViewDelegate>
-- (UIView * _Nullable)viewForZoomingInScrollView:(UIScrollView * _Nonnull)scrollView SWIFT_WARN_UNUSED_RESULT;
-- (void)scrollViewWillBeginZooming:(UIScrollView * _Nonnull)scrollView withView:(UIView * _Nullable)view;
-- (void)scrollViewDidEndZooming:(UIScrollView * _Nonnull)scrollView withView:(UIView * _Nullable)view atScale:(CGFloat)scale;
-@end
-
-
 SWIFT_CLASS("_TtC5BESDK11NKTextField")
 @interface NKTextField : UITextField
 @property (nonatomic, getter=isSecureTextEntry) BOOL secureTextEntry;
@@ -1016,6 +843,7 @@ SWIFT_CLASS("_TtC5BESDK11NKTextField")
 
 
 @protocol UIViewControllerTransitionCoordinator;
+@class NSBundle;
 
 SWIFT_CLASS("_TtC5BESDK16PullUpController")
 @interface PullUpController : UIViewController
@@ -1049,16 +877,6 @@ SWIFT_CLASS("_TtC5BESDK11StackLayout")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
-
-SWIFT_CLASS("_TtC5BESDK20TableLabelHeaderView")
-@interface TableLabelHeaderView : UITableViewHeaderFooterView
-- (nonnull instancetype)initWithReuseIdentifier:(NSString * _Nullable)reuseIdentifier SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)layoutSubviews;
-- (CGSize)sizeThatFits:(CGSize)size SWIFT_WARN_UNUSED_RESULT;
-@end
-
 
 
 
