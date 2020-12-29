@@ -2,7 +2,7 @@ PODS:
   - AFDateHelper (4.3.0)
   - Alamofire (4.9.1)
   - AMPopTip (4.5.0)
-  - BESDK (1.0.2):
+  - BESDK (1.0.3):
     - AFDateHelper
     - Alamofire
     - AMPopTip
@@ -47,7 +47,7 @@ PODS:
   - SwiftySound (1.2.0)
 
 DEPENDENCIES:
-  - BESDK (from `https://github.com/belatoi/besdk-transport.git`, tag `v1.0.3`)
+  - BESDK (from `https://github.com/belatoi/besdk-transport.git`, tag `v1.0.4`)
 
 SPEC REPOS:
   trunk:
@@ -74,18 +74,18 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   BESDK:
     :git: https://github.com/belatoi/besdk-transport.git
-    :tag: v1.0.3
+    :tag: v1.0.4
 
 CHECKOUT OPTIONS:
   BESDK:
     :git: https://github.com/belatoi/besdk-transport.git
-    :tag: v1.0.3
+    :tag: v1.0.4
 
 SPEC CHECKSUMS:
   AFDateHelper: b769c07d3d4784ee9a74633285304261bb27dc52
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AMPopTip: e0ed2967892b18d1e55505c015fa06e535003fdc
-  BESDK: 83cc88884e98cfaeaac81ddae0567ea2558d22dc
+  BESDK: 7960be3d68531aaee655bb52aa6b88a36e3361a4
   CryptoSwift: 01b0f0cba1d5c212e5a335ff6c054fb75a204f00
   GoogleMaps: 008e2c80e38605b56b560e8deb73d4194ff30bef
   Haptica: dc206651beeca25ab4744c633fbf0ae4d1e86baf
@@ -103,6 +103,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftySound: 9eb28bb14edb601b40027e44319e0ef8383f88bf
 
-PODFILE CHECKSUM: bfe74ce7c028744c2c4f74a5e44dd026ee161419
+PODFILE CHECKSUM: 18b515472a0d9447978b550dcec9bce260d13bf3
 
 COCOAPODS: 1.10.0
