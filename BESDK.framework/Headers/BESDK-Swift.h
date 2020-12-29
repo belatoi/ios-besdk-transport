@@ -225,7 +225,6 @@ SWIFT_CLASS("_TtC5BESDK11FrameLayout")
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)drawRect:(CGRect)rect;
 - (CGSize)sizeThatFits:(CGSize)size SWIFT_WARN_UNUSED_RESULT;
 - (void)layoutSubviews;
 - (void)didMoveToWindow;
@@ -689,7 +688,6 @@ SWIFT_CLASS("_TtC5BESDK11FrameLayout")
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)drawRect:(CGRect)rect;
 - (CGSize)sizeThatFits:(CGSize)size SWIFT_WARN_UNUSED_RESULT;
 - (void)layoutSubviews;
 - (void)didMoveToWindow;
