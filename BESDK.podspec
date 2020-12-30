@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = "BESDK"
-  spec.version          = "1.0.5"
+  spec.version          = "1.0.6"
   spec.summary          = "BESDK is a framework use to integrate BE's service into another app."
   spec.homepage         = "https://github.com/belatoi/besdk-transport.git"
   spec.license          = "MIT"
