@@ -7,7 +7,7 @@ target 'IntegrateDemo' do
 
   # Pods for IntegrateDemo
 #  pod 'BESDK', :path => '../'
-  pod 'BESDK', :git => 'https://github.com/belatoi/besdk-transport.git', :tag => 'v1.0.7'
+  pod 'BESDK', :git => 'https://github.com/belatoi/besdk-transport.git', :tag => 'v1.0.8'
 #  pod 'BESDK', :git => 'https://github.com/belatoi/besdk-transport.git', :branch => 'development'
 
   target 'IntegrateDemoTests' do
