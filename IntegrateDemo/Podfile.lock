@@ -2,7 +2,7 @@ PODS:
   - AFDateHelper (4.3.0)
   - Alamofire (5.4.1)
   - AMPopTip (4.5.0)
-  - BESDK (1.0.8):
+  - BESDK (1.0.9):
     - AFDateHelper
     - Alamofire (~> 5.0)
     - AMPopTip
@@ -17,7 +17,6 @@ PODS:
     - SwiftGen
     - SwiftIcons_
     - SwiftLocation (~> 4.2)
-    - SwiftRichString
     - SwiftyAttributes
     - SwiftyJSON
     - SwiftySound
@@ -40,13 +39,12 @@ PODS:
   - SwiftGen (6.4.0)
   - SwiftIcons_ (2.4.3)
   - SwiftLocation (4.2.0)
-  - SwiftRichString (3.7.2)
   - SwiftyAttributes (5.1.1)
   - SwiftyJSON (5.0.0)
   - SwiftySound (1.2.0)
 
 DEPENDENCIES:
-  - BESDK (from `https://github.com/belatoi/besdk-transport.git`, tag `v1.0.8`)
+  - BESDK (from `https://github.com/belatoi/besdk-transport.git`, tag `v1.0.9`)
 
 SPEC REPOS:
   trunk:
@@ -65,7 +63,6 @@ SPEC REPOS:
     - SwiftGen
     - SwiftIcons_
     - SwiftLocation
-    - SwiftRichString
     - SwiftyAttributes
     - SwiftyJSON
     - SwiftySound
@@ -73,18 +70,18 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   BESDK:
     :git: https://github.com/belatoi/besdk-transport.git
-    :tag: v1.0.8
+    :tag: v1.0.9
 
 CHECKOUT OPTIONS:
   BESDK:
     :git: https://github.com/belatoi/besdk-transport.git
-    :tag: v1.0.8
+    :tag: v1.0.9
 
 SPEC CHECKSUMS:
   AFDateHelper: b769c07d3d4784ee9a74633285304261bb27dc52
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   AMPopTip: e0ed2967892b18d1e55505c015fa06e535003fdc
-  BESDK: 05f3b3314b1bcfc30be72efe65cd29340b936279
+  BESDK: 0267cb210a6901194964c1a1e59bcb49a1e9db2b
   CryptoSwift: 01b0f0cba1d5c212e5a335ff6c054fb75a204f00
   GoogleMaps: 008e2c80e38605b56b560e8deb73d4194ff30bef
   Haptica: dc206651beeca25ab4744c633fbf0ae4d1e86baf
@@ -97,11 +94,10 @@ SPEC CHECKSUMS:
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
   SwiftIcons_: 2711d023e806474eb9dada3d956cb0b0b285dbb8
   SwiftLocation: 609ac8859f2c5d48a6cadd2a58c63b1dae02dc25
-  SwiftRichString: d61b807db1f8834c26fee92b6dd3e1be2dc5af03
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftySound: 9eb28bb14edb601b40027e44319e0ef8383f88bf
 
-PODFILE CHECKSUM: 565d743eecf7582defd6baba5751959e81afebc3
+PODFILE CHECKSUM: 4a76752027dd2c6c92c8d3a6a1e5d2e2d7eba810
 
 COCOAPODS: 1.10.1
