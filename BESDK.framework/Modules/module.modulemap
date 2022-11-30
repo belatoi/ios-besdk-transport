@@ -6,6 +6,6 @@ framework module BESDK {
 }
 
 module BESDK.Swift {
-    header "BESDK-Swift.h"
-    requires objc
+  header "BESDK-Swift.h"
+  requires objc
 }
