@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -612,7 +612,7 @@
 				CURRENT_PROJECT_VERSION = 201111.1751;
 				DEVELOPMENT_TEAM = G5TV4A24RH;
 				INFOPLIST_FILE = IntegrateDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -636,7 +636,7 @@
 				CURRENT_PROJECT_VERSION = 201111.1751;
 				DEVELOPMENT_TEAM = G5TV4A24RH;
 				INFOPLIST_FILE = IntegrateDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

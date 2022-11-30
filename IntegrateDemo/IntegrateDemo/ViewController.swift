@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
 
     @objc func showBeTransport() {
-        let beController = BETransportSDK.shared.instance(with: "cde998659354f905e9ee0a6715c05e3c8d55bc88a9103b11937e69b006052784", language: .vi)
+        let beController = BETransportSDK.shared.instance(with: "483996aeecc7b6efe9492b2b7f66219d249286802a82c543566fa163a9c2d83c", language: .vi)
         self.present(beController, animated: true, completion: nil)
     }
 }
